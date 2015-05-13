@@ -7,7 +7,7 @@ package composite;
 public class Main {
 
     /**
-     *
+     * ƒƒCƒ“
      * @param args
      */
     public static void main(String[] args) {
