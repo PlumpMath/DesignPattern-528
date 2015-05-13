@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="strategy">
+  <ClassDiagramComponents>
+    <Interface name="Strategy" package="" visibility="public" xPosition="542.0" yPosition="73.0">
+      <Methods>
+        <Method name="nextHand" returnType="Hand" visibility="public"/>
+        <Method name="study" returnType="void" visibility="public">
+          <Argument type="boolean" name="win"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Hand" package="" visibility="public" xPosition="127.0" yPosition="388.0">
+      <Fields>
+        <Field name="HANDVALUE_GUU" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="HANDVALUE_CHO" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="HANDVALUE_PAA" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="hand" type="Hand[]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="name" type="String[]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="handvalue" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private">
+          <Argument type="int" name="handvalue"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getHand" returnType="int" visibility="public" isStatic="true">
+          <Argument type="int" name="handvalue"/>
+        </Method>
+        <Method name="isStrongerThan" returnType="Hand" visibility="public">
+          <Argument type="Hand" name="h"/>
+        </Method>
+        <Method name="isWeakerThan" returnType="Hand" visibility="public">
+          <Argument type="Hand" name="h"/>
+        </Method>
+        <Method name="fight" returnType="Hand" visibility="private">
+          <Argument type="Hand" name="h"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Player" package="" visibility="public" xPosition="88.0" yPosition="73.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="strategy" type="Strategy" visibility="private"/>
+        <Field name="wincount" type="int" visibility="private"/>
+        <Field name="losecount" type="int" visibility="private"/>
+        <Field name="gamecount" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Player" returnType="Strategy" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="Strategy" name="strategy"/>
+        </Method>
+        <Method name="nextHand" returnType="Hand" visibility="public"/>
+        <Method name="win" returnType="void" visibility="public"/>
+        <Method name="lose" returnType="void" visibility="public"/>
+        <Method name="even" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ProbStrategy" package="" visibility="public" xPosition="666.0" yPosition="232.0">
+      <Fields>
+        <Field name="random" type="Random" visibility="private"/>
+        <Field name="prevHandValue" type="int" visibility="private"/>
+        <Field name="currentHandValue" type="int" visibility="private"/>
+        <Field name="history" type="int[][]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="seed"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="nextHand" returnType="Hand" visibility="public"/>
+        <Method name="getSum" returnType="int" visibility="public">
+          <Argument type="int" name="hv"/>
+        </Method>
+        <Method name="study" returnType="void" visibility="public">
+          <Argument type="boolean" name="win"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="WinningStrategy" package="" visibility="public" xPosition="450.0" yPosition="232.0">
+      <Fields>
+        <Field name="random" type="Random" visibility="private"/>
+        <Field name="won" type="boolean" visibility="private"/>
+        <Field name="prevHand" type="Hand" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="seed"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="nextHand" returnType="Hand" visibility="public"/>
+        <Method name="study" returnType="void" visibility="public">
+          <Argument type="boolean" name="win"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ProbStrategy" target="Strategy"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="WinningStrategy" target="Strategy"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

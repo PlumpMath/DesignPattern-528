@@ -1,0 +1,64 @@
+package proxy;
+
+/**
+ *
+ * @author kinoshita_h
+ */
+public class Printer implements Printable {
+    private String name;
+
+    /**
+     *
+     */
+    public Printer() {
+        heavyJob("Printerのインスタンスを生成中");
+    }
+
+    /**
+     *
+     * @param name
+     */
+    public Printer(String name) {                   // コンストラクタ
+        this.name = name;
+        heavyJob("Printerのインスタンス(" + name + ")を生成中");
+    }
+
+    /**
+     *
+     * @param name
+     */
+    @Override
+    public void setPrinterName(String name) {       // 名前の設定
+        this.name = name;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String getPrinterName() {                // 名前の取得
+        return name;
+    }
+
+    /**
+     *
+     * @param string
+     */
+    @Override
+    public void print(String string) {              // 名前付きで表示
+        System.out.println("=== " + name + " ===");
+        System.out.println(string);
+    }
+    private void heavyJob(String msg) {             // 重い作業(のつもり)
+        System.out.print(msg);
+        for (int i = 0; i < 5; i++) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+            }
+            System.out.print(".");
+        }
+        System.out.println("完了。");
+    }
+}

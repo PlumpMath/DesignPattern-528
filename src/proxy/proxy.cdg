@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="proxy">
+  <ClassDiagramComponents>
+    <Interface name="Printable" package="" visibility="public" xPosition="280.0" yPosition="57.0">
+      <Methods>
+        <Method name="setPrinterName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getPrinterName" returnType="String" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Printer" package="" visibility="public" xPosition="164.0" yPosition="232.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setPrinterName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="heavyJob" returnType="String" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="getPrinterName" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PrinterProxy" package="" visibility="public" xPosition="430.0" yPosition="232.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="real" type="Printer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setPrinterName" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getPrinterName" returnType="String" visibility="public"/>
+        <Method name="print" returnType="void" visibility="public">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="realize" returnType="void" visibility="public" isSynchronized="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Printer" target="Printable"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="PrinterProxy" target="Printable"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

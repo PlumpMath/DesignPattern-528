@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="newClassDiagramTemplate">
+  <ClassDiagramComponents>
+    <Class name="Directory" package="" visibility="public" xPosition="276.0" yPosition="172.0">
+      <Fields>
+        <Field name="name" type="Sting" visibility="private"/>
+        <Field name="dir" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getSize" returnType="int" visibility="public"/>
+        <Method name="add" returnType="Entry" visibility="public">
+          <Argument type="Entry" name="entry"/>
+        </Method>
+        <Method name="iterator" returnType="Iterator" visibility="public"/>
+        <Method name="accept" returnType="Visitor" visibility="public">
+          <Argument type="Visitor" name="v"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Entry" package="" visibility="public" isAbstract="true" xPosition="452.0" yPosition="172.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public" isAbstract="true"/>
+        <Method name="getSize" returnType="int" visibility="public" isAbstract="true"/>
+        <Method name="add" returnType="Entry" visibility="public">
+          <Argument type="Entry" name="entry"/>
+        </Method>
+        <Method name="iterator" returnType="Iterator" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="File" package="" visibility="public" xPosition="437.0" yPosition="428.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="size" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="File" returnType="int" visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="int" name="size"/>
+        </Method>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getSize" returnType="int" visibility="public"/>
+        <Method name="accept" returnType="Visitor" visibility="public">
+          <Argument type="Visitor" name="v"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Visitor" package="" visibility="public" isAbstract="true" xPosition="636.0" yPosition="21.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="visit" returnType="File" visibility="public" isAbstract="true">
+          <Argument type="File" name="file"/>
+        </Method>
+        <Method name="visit" returnType="Directory" visibility="public" isAbstract="true">
+          <Argument type="Directory" name="directory"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ListVisitor" package="" visibility="public" xPosition="636.0" yPosition="227.0">
+      <Fields>
+        <Field name="currentdir" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="visit" returnType="File" visibility="public">
+          <Argument type="File" name="file"/>
+        </Method>
+        <Method name="visit" returnType="Directory" visibility="public">
+          <Argument type="Directory" name="directory"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Element" package="" visibility="public" xPosition="369.0" yPosition="45.0">
+      <Methods>
+        <Method name="accept" returnType="Visitor" visibility="public">
+          <Argument type="Visitor" name="v"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="Main" package="" visibility="public" xPosition="47.0" yPosition="238.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="String[]" visibility="public">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ListVisitor" target="Visitor"/>
+    <IsRelation name="is" source="File" target="Entry"/>
+    <UseRelation name="" source="Element" target="Visitor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Entry" target="Element"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Directory" target="Element"/>
+    <UseRelation name="" source="Main" target="Directory" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

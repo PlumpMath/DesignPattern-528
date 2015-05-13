@@ -1,0 +1,50 @@
+package bridge;
+
+/**
+ *
+ * @author kinoshita_h
+ */
+public class StringDisplayImpl extends DisplayImpl {
+    private final String string;                              // 表示するべき文字列
+    private final int width;                                  // バイト単位で計算した文字列の「幅」
+
+    /**
+     *
+     * @param string
+     */
+    public StringDisplayImpl(String string) {           //コンストラクタで渡された文字列stringを、
+        this.string = string;                               //フィールドに記憶しておく。
+        this.width = string.getBytes().length;              //それからバイト単位の幅もフィールドに記憶しておいて、後で使う。
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void rawOpen() {
+        printLine();
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void rawPrint() {
+        System.out.println("|" + string + "|");         // 前後に"|"をつけて表示
+    }
+
+    /**
+     *
+     */
+    @Override
+    public void rawClose() {
+        printLine();
+    }
+    private void printLine() {
+        System.out.print("+");                          // 枠の角を表現する"+"マークを表示する。
+        for (int i = 0; i < width; i++) {               // width個の"-"を表示して、
+            System.out.print("-");                      // 枠線として用いる。
+        }
+        System.out.println("+");                        // 枠の角を表現する"+"マークを表示する。
+    }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="builder">
+  <ClassDiagramComponents>
+    <Class name="Director" package="" visibility="public" xPosition="21.0" yPosition="75.0">
+      <Fields>
+        <Field name="builder" type="Builder" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Builder" name="builder"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="construct" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="HTMLBuilder" package="" visibility="public" xPosition="233.0" yPosition="277.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="makeTitle" returnType="String" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="makeString" returnType="String" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="makeItems" returnType="String[]" visibility="public">
+          <Argument type="String[]" name="items"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public"/>
+        <Method name="getResult" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TextBuilder" package="" visibility="public" xPosition="485.0" yPosition="277.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="makeTitle" returnType="String" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="makeString" returnType="String" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="makeItems" returnType="String[]" visibility="public">
+          <Argument type="String[]" name="items"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public"/>
+        <Method name="getResult" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="24.0" yPosition="277.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Builder" package="" visibility="public" xPosition="364.0" yPosition="62.0">
+      <Methods>
+        <Method name="makeTitle" returnType="String" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="makeString" returnType="String" visibility="public">
+          <Argument type="String" name="str"/>
+        </Method>
+        <Method name="makeItems" returnType="String[]" visibility="public">
+          <Argument type="String[]" name="items"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public"/>
+        <Method name="getResult" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="HTMLBuilder" target="Builder"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="TextBuilder" target="Builder"/>
+    <UseRelation name="" source="Director" target="Builder" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="Main" target="Director" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

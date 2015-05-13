@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="adaptor01">
+  <ClassDiagramComponents>
+    <Class name="PrintBanner" package="" visibility="public" xPosition="58.0" yPosition="262.0">
+      <Fields>
+        <Field name="banner" type="Banner" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="printWeak" returnType="void" visibility="public"/>
+        <Method name="printStrong" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Banner" package="" visibility="public" xPosition="400.0" yPosition="269.0">
+      <Fields>
+        <Field name="string" type="String" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="showWithParen" returnType="void" visibility="public"/>
+        <Method name="showWithAster" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="400.0" yPosition="111.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Print" package="" visibility="public" xPosition="67.0" yPosition="105.0">
+      <Methods>
+        <Method name="printWeak" returnType="void" visibility="public"/>
+        <Method name="printStrong" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="PrintBanner" target="Print"/>
+    <HasRelation name="has" source="PrintBanner" target="Banner" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <UseRelation name="uses" source="Main" target="Print" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

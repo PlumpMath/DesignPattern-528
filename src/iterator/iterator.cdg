@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="iterator">
+  <ClassDiagramComponents>
+    <Class name="BookShelf " package="" visibility="public" xPosition="25.0" yPosition="179.0">
+      <Fields>
+        <Field name="books" type="Book[]" visibility="private" isFinal="true"/>
+        <Field name="last" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="maxsize"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getBookAt" returnType="int" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="appendBook" returnType="Book" visibility="public">
+          <Argument type="Book" name="book"/>
+        </Method>
+        <Method name="getLength" returnType="int" visibility="public"/>
+        <Method name="iterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BookShelfIterator" package="" visibility="public" xPosition="316.0" yPosition="196.0">
+      <Fields>
+        <Field name="bookShelf" type="BookShelf" visibility="private"/>
+        <Field name="index" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="BookShelfIterator" returnType="BookShelf" visibility="public">
+          <Argument type="BookShelf" name="bookShelf"/>
+        </Method>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+        <Method name="next" returnType="Object" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Book" package="" visibility="public" xPosition="50.0" yPosition="436.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Aggregate" package="" visibility="public" xPosition="50.0" yPosition="53.0">
+      <Methods>
+        <Method name="iterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Iterator" package="" visibility="public" xPosition="393.0" yPosition="45.0">
+      <Methods>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+        <Method name="next" returnType="Object" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="has" source="BookShelfIterator" target="BookShelf " type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="has" source="BookShelf " target="Book" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BookShelfIterator" target="Iterator"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BookShelf " target="Aggregate"/>
+    <UseRelation name="create" source="Aggregate" target="Iterator" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="state">
+  <ClassDiagramComponents>
+    <Interface name="Context" package="" visibility="public" xPosition="43.0" yPosition="47.0">
+      <Methods>
+        <Method name="setClock" returnType="int" visibility="public">
+          <Argument type="int" name="hour"/>
+        </Method>
+        <Method name="changeState" returnType="State" visibility="public">
+          <Argument type="State" name="state"/>
+        </Method>
+        <Method name="callSecurityCenter" returnType="String" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="recordLog" returnType="String" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="DayState" package="" visibility="public" xPosition="625.0" yPosition="222.0">
+      <Fields>
+        <Field name="singleton" type="DayState" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="State" visibility="public" isStatic="true"/>
+        <Method name="doClock" returnType="int" visibility="public">
+          <Argument type="Context" name="context"/>
+          <Argument type="int" name="hour"/>
+        </Method>
+        <Method name="doUse" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="doAlarm" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="doPhone" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="State" package="" visibility="public" xPosition="460.0" yPosition="51.0">
+      <Methods>
+        <Method name="doClock" returnType="int" visibility="public">
+          <Argument type="Context" name="context"/>
+          <Argument type="int" name="hour"/>
+        </Method>
+        <Method name="doUse" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="doPhone" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class name="NightState" package="" visibility="public" xPosition="358.0" yPosition="222.0">
+      <Fields>
+        <Field name="singleton" type="NightState" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="State" visibility="public" isStatic="true"/>
+        <Method name="doClock" returnType="int" visibility="public">
+          <Argument type="Context" name="context"/>
+          <Argument type="int" name="hour"/>
+        </Method>
+        <Method name="doUse" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="doAlarm" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="doPhone" returnType="Context" visibility="public">
+          <Argument type="Context" name="context"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SafeFrame" package="" visibility="public" xPosition="37.0" yPosition="222.0">
+      <Fields>
+        <Field name="textClock" type="TextField" visibility="private"/>
+        <Field name="textScreen" type="TextArea" visibility="private"/>
+        <Field name="buttonUse" type="Button" visibility="private"/>
+        <Field name="buttonAlarm" type="Button" visibility="private"/>
+        <Field name="buttonPhone" type="Button" visibility="private"/>
+        <Field name="buttonExit" type="Button" visibility="private"/>
+        <Field name="state" type="State" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="title"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="actionPerformed" returnType="void" visibility="public">
+          <Argument type="ActionEvent" name="e"/>
+        </Method>
+        <Method name="setClock" returnType="void" visibility="public">
+          <Argument type="int" name="hour"/>
+        </Method>
+        <Method name="changeState" returnType="void" visibility="public">
+          <Argument type="State" name="state"/>
+        </Method>
+        <Method name="callSecurityCenter" returnType="void" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="recordLog" returnType="void" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="DayState" target="State"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="NightState" target="State"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="SafeFrame" target="Context"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

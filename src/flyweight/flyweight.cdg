@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="flyweight">
+  <ClassDiagramComponents>
+    <Class name="BigChar" package="" visibility="public" xPosition="72.0" yPosition="39.0">
+      <Fields>
+        <Field name="fontdata" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="char" name="charname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="BigCharFactory" package="" visibility="public" xPosition="44.0" yPosition="245.0">
+      <Fields>
+        <Field name="pool" type="HashMap" visibility="private"/>
+        <Field name="singleton" type="BigCharFactory" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="BigCharFactory" visibility="public" isStatic="true"/>
+        <Method name="getBigChar" returnType="char" visibility="public" isSynchronized="true">
+          <Argument type="char" name="charname"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BigString" package="" visibility="public" xPosition="416.0" yPosition="245.0">
+      <Fields>
+        <Field name="bigchars" type="List&lt;BigChar&gt;" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="string"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="print" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="416.0" yPosition="79.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="Main" target="BigString" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="Uses" source="BigString" target="BigCharFactory" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Create" source="BigCharFactory" target="BigChar" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
