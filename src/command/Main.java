@@ -26,7 +26,7 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
      *
      * @param title
      */
-        public Main(String title) {
+    public Main(String title) {
         super(title);
 
         this.addWindowListener(this);
