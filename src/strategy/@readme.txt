@@ -1,0 +1,14 @@
+■第10章 Strategy
+  -- アルゴリズムをごっそり切り替える同一視
+
+＜説明＞
+ [XXXXX]
+  ・XXXX
+  ・XXXX
+  ・XXXX
+ [XXXXXX]
+  ・XXXX
+
+＜ポイント＞
+  ・XXXXXXXXXXXXXXXXXXXXXXXXXXX
+　・XXXXXXXXXXXXXXXXXXXXXXXXXXX

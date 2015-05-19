@@ -1,0 +1,14 @@
+■第23章 Interpreter
+  -- 文法規則をクラスで表現する
+
+＜説明＞
+ [XXXXX]
+  ・XXXX
+  ・XXXX
+  ・XXXX
+ [XXXXXX]
+  ・XXXX
+
+＜ポイント＞
+  ・XXXXXXXXXXXXXXXXXXXXXXXXXXX
+　・XXXXXXXXXXXXXXXXXXXXXXXXXXX

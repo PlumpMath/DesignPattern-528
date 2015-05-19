@@ -1,0 +1,14 @@
+■第17章 Observer
+  -- 状態の変化を通知する
+
+＜説明＞
+ [XXXXX]
+  ・XXXX
+  ・XXXX
+  ・XXXX
+ [XXXXXX]
+  ・XXXX
+
+＜ポイント＞
+  ・XXXXXXXXXXXXXXXXXXXXXXXXXXX
+　・XXXXXXXXXXXXXXXXXXXXXXXXXXX

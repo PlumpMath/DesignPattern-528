@@ -1,0 +1,14 @@
+■第22章 Command
+  -- 命令をクラスにする
+
+＜説明＞
+ [XXXXX]
+  ・XXXX
+  ・XXXX
+  ・XXXX
+ [XXXXXX]
+  ・XXXX
+
+＜ポイント＞
+  ・XXXXXXXXXXXXXXXXXXXXXXXXXXX
+　・XXXXXXXXXXXXXXXXXXXXXXXXXXX

@@ -1,0 +1,14 @@
+■第5章 Singleton
+  -- たった1つのインスタンス
+
+＜説明＞
+ [XXXXX]
+  ・XXXX
+  ・XXXX
+  ・XXXX
+ [XXXXXX]
+  ・XXXX
+
+＜ポイント＞
+  ・XXXXXXXXXXXXXXXXXXXXXXXXXXX
+　・XXXXXXXXXXXXXXXXXXXXXXXXXXX

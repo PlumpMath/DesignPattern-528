@@ -1,5 +1,5 @@
-■templateMethodパターン
- -- 具体的な処理をサブクラスに任せる
+■第3章 Template Method
+  -- 具体的な処理をサブクラスにまかせる
 
 ＜説明＞
  [AbstractDisplay]
