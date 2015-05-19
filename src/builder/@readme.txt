@@ -1,5 +1,5 @@
-■builderパターン
- -- XXXXXXXXXX
+■第7章 Builder
+  -- 複雑なインスタンスを組み立てる
 
 ＜説明＞
  [XXXXX]
