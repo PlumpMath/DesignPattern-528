@@ -2,7 +2,7 @@
 
 <ClassDiagram name="adaptor01">
   <ClassDiagramComponents>
-    <Class name="PrintBanner" package="" visibility="public" xPosition="58.0" yPosition="262.0">
+    <Class name="PrintBanner" package="" visibility="public" xPosition="60.0" yPosition="269.0">
       <Fields>
         <Field name="banner" type="Banner" visibility="private" isFinal="true"/>
       </Fields>
@@ -35,7 +35,7 @@
       <Constructors/>
       <Methods/>
     </Class>
-    <Interface name="Print" package="" visibility="public" xPosition="67.0" yPosition="105.0">
+    <Interface name="Print" package="" visibility="public" xPosition="67.0" yPosition="97.0">
       <Methods>
         <Method name="printWeak" returnType="void" visibility="public"/>
         <Method name="printStrong" returnType="void" visibility="public"/>
@@ -43,8 +43,8 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
+    <UseRelation name="uses" source="Main" target="Print" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="PrintBanner" target="Print"/>
     <HasRelation name="has" source="PrintBanner" target="Banner" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
-    <UseRelation name="uses" source="Main" target="Print" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

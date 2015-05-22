@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="facade">
+  <ClassDiagramComponents>
+    <Class name="PageMaker" package="" visibility="public" xPosition="316.0" yPosition="59.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="makeWelcomePage" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="mailaddr"/>
+          <Argument type="String" name="filename"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HtmlWriter" package="" visibility="public" xPosition="185.0" yPosition="231.0">
+      <Fields>
+        <Field name="writer" type="Writer" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Writer" name="writer"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="title" returnType="String" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="paragraph" returnType="String" visibility="public">
+          <Argument type="String" name="msg"/>
+        </Method>
+        <Method name="link" returnType="String" visibility="public">
+          <Argument type="String" name="href"/>
+          <Argument type="String" name="caption"/>
+        </Method>
+        <Method name="mailto" returnType="String" visibility="public">
+          <Argument type="String" name="mailaddr"/>
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="close" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Database" package="" visibility="public" xPosition="567.0" yPosition="231.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getProperties" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="dbname"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Main" package="" visibility="public" xPosition="27.0" yPosition="78.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation name="" source="PageMaker" target="Database" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <UseRelation name="" source="Main" target="PageMaker" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation name="" source="PageMaker" target="HtmlWriter" sourceCardinality="1..1" targetCardinality="0..*"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

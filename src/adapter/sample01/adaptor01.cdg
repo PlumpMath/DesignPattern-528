@@ -2,13 +2,7 @@
 
 <ClassDiagram name="adaptor01">
   <ClassDiagramComponents>
-    <Interface name="Print" package="" visibility="public" xPosition="67.0" yPosition="105.0">
-      <Methods>
-        <Method name="printWeak" returnType="void" visibility="public"/>
-        <Method name="printStrong" returnType="void" visibility="public"/>
-      </Methods>
-    </Interface>
-    <Class name="PrintBanner" package="" visibility="public" xPosition="58.0" yPosition="262.0">
+    <Class name="PrintBanner" package="" visibility="public" xPosition="58.0" yPosition="264.0">
       <Fields/>
       <Constructors>
         <Constructor visibility="public">
@@ -34,15 +28,21 @@
         <Method name="showWithAster" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Main" package="" visibility="public" xPosition="400.0" yPosition="111.0">
+    <Class name="Main" package="" visibility="public" xPosition="403.0" yPosition="111.0">
       <Fields/>
       <Constructors/>
       <Methods/>
     </Class>
+    <Interface name="Print" package="" visibility="public" xPosition="65.0" yPosition="97.0">
+      <Methods>
+        <Method name="printWeak" returnType="void" visibility="public"/>
+        <Method name="printStrong" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <UseRelation name="uses" source="Main" target="Print" sourceCardinality="1..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="PrintBanner" target="Banner"/>
+    <UseRelation name="uses" source="Main" target="Print" sourceCardinality="1..1" targetCardinality="1..1"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="PrintBanner" target="Print"/>
   </ClassDiagramRelations>
 </ClassDiagram>
