@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Directory extends Entry {
     private final String name;                    // ディレクトリの名前
-    private final ArrayList directory = new ArrayList();      // ディレクトリエントリの集合
+    private final ArrayList<Entry> directory = new ArrayList<>();      // ディレクトリエントリの集合
 
     /**
      *
@@ -35,11 +35,9 @@ public class Directory extends Entry {
     @Override
     public int getSize() {                  // サイズを得る
         int size = 0;
-        Iterator it = directory.iterator();
-        while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
-            size += entry.getSize();
-        }
+        size = directory.stream()
+                .map((entry) -> entry.getSize())
+                .reduce(size, Integer::sum);
         return size;
     }
 
@@ -61,10 +59,7 @@ public class Directory extends Entry {
     @Override
     protected void printList(String prefix) {       // エントリの一覧
         System.out.println(prefix + "/" + this);
-        Iterator it = directory.iterator();
-        while (it.hasNext()) {
-            Entry entry = (Entry)it.next();
-            entry.printList(prefix + "/" + name);
-        }
+        directory.stream()
+                .forEach(entry -> entry.printList(prefix + "/" + name));
     }
 }
