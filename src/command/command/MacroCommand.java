@@ -18,9 +18,8 @@ public class MacroCommand implements Command {
         @Override
     public void execute() {
         Iterator it = commands.iterator();
-        while (it.hasNext()) {
+        while (it.hasNext()) 
             ((Command)it.next()).execute();
-        }
     }
     // í«â¡
 
@@ -29,26 +28,24 @@ public class MacroCommand implements Command {
      * @param cmd
      */
         public void append(Command cmd) {
-        if (cmd != this) {
+        if (cmd != this) 
             commands.push(cmd);
-        }
     }
     // ç≈å„ÇÃñΩóﬂÇçÌèú
 
     /**
      *
      */
-        public void undo() {
-        if (!commands.empty()) {
+    public void undo() {
+        if (!commands.empty())
             commands.pop();
-        }
     }
     // ëSïîçÌèú
 
     /**
      *
      */
-        public void clear() {
+    public void clear() {
         commands.clear();
     }
 }
