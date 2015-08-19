@@ -23,9 +23,8 @@ public class NightState implements State {
      * @param hour
      */
     public void doClock(Context context, int hour) {    // İ’è
-        if (9 <= hour && hour < 17) {
+        if (9 <= hour && hour < 17)
             context.changeState(DayState.getInstance());
-        }
     }
 
     /**
