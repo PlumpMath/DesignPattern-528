@@ -1,27 +1,16 @@
 package abstractFactory.tablefactory;
+
 import abstractFactory.factory.Item;
 import abstractFactory.factory.Page;
 import java.util.Iterator;
 
-/**
- *
- * @author kinoshita_h
- */
+
 public class TablePage extends Page {
 
-    /**
-     *
-     * @param title
-     * @param author
-     */
     public TablePage(String title, String author) {
         super(title, author);
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String makeHTML() {
         StringBuilder buffer = new StringBuilder();

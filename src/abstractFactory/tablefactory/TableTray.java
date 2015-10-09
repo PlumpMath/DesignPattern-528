@@ -1,26 +1,15 @@
 package abstractFactory.tablefactory;
+
 import abstractFactory.factory.Item;
 import abstractFactory.factory.Tray;
 import java.util.Iterator;
 
-/**
- *
- * @author kinoshita_h
- */
 public class TableTray extends Tray {
 
-    /**
-     *
-     * @param caption
-     */
     public TableTray(String caption) {
         super(caption);                     // super(...)‚Æ‚¢‚¤•\‹L–@
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String makeHTML() {
         StringBuilder buffer = new StringBuilder();

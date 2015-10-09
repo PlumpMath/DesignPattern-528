@@ -5,24 +5,16 @@ import abstractFactory.factory.Link;
 import abstractFactory.factory.Page;
 import abstractFactory.factory.Tray;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.out.println("Usage: java Main class.name.of.ConcreteFactory");
-            System.out.println("Example 1: java Main listfactory.ListFactory");
-            System.out.println("Example 2: java Main tablefactory.TableFactory");
-            System.exit(0);
-        }
-        Factory factory = Factory.getFactory(args[0]);
+        
+        // Å´à»â∫ÅAÇ¢Ç√ÇÍÇ©Ç…êÿÇËë÷Ç¶ÇÈ
+        String clazz = "abstractFactory.listfactory.ListFactory";
+        //String clazz = "abstractFactory.tablefactory.TableFactory";
+        
+        
+        Factory factory = Factory.getFactory(clazz);
 
         Link asahi = factory.createLink("í©ì˙êVï∑", "http://www.asahi.com/");
         Link yomiuri = factory.createLink("ì«îÑêVï∑", "http://www.yomiuri.co.jp/");

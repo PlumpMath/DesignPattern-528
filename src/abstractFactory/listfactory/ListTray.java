@@ -1,26 +1,15 @@
 package abstractFactory.listfactory;
+
 import abstractFactory.factory.Item;
 import abstractFactory.factory.Tray;
 import java.util.Iterator;
 
-/**
- *
- * @author kinoshita_h
- */
 public class ListTray extends Tray {
 
-    /**
-     *
-     * @param caption
-     */
     public ListTray(String caption) {
         super(caption);
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String makeHTML() {
         StringBuilder buffer = new StringBuilder();
