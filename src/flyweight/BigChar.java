@@ -9,8 +9,6 @@ import java.io.IOException;
  * @author kinopp
  */
 public class BigChar {
-    // 文字の名前
-//    private char charname;
     // 大きな文字を表現する文字列('#' '.' '\n'の列)
     private String fontdata;
 
@@ -19,7 +17,6 @@ public class BigChar {
      * @param charname 表示したい数字またはハイフン１文字
      */
     public BigChar(char charname) {
-//        this.charname = charname;
         try {
             // bigx.txtを読み込む
             BufferedReader reader = new BufferedReader(

@@ -5,16 +5,8 @@ import factoryMethod.framework.Factory;
 import factoryMethod.framework.Product;
 import factoryMethod.idcard.IDCardFactory;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Factory factory = new IDCardFactory();
         Product card1 = factory.create("åãèÈç_");

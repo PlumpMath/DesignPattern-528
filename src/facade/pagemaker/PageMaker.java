@@ -4,19 +4,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
-/**
- *
- * @author kinoshita_h
- */
 public class PageMaker {
     private PageMaker() {   // インスタンスは作らないのでprivate宣言する
     }
 
-    /**
-     *
-     * @param mailaddr
-     * @param filename
-     */
     public static void makeWelcomePage(String mailaddr, String filename) {
         try {
             Properties mailprop = Database.getProperties("maildata");
