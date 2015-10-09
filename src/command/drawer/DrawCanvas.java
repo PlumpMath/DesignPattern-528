@@ -3,10 +3,6 @@ package command.drawer;
 import command.command.MacroCommand;
 import java.awt.*;
 
-/**
- *
- * @author kinoshita_h
- */
 public class DrawCanvas extends Canvas implements Drawable {
     // 描画色
     private final Color color = Color.red;
@@ -14,32 +10,22 @@ public class DrawCanvas extends Canvas implements Drawable {
     private final int radius = 6;
     // 履歴
     private final MacroCommand history;
+    
     // コンストラクタ
-
-    /**
-     *
-     * @param width
-     * @param height
-     * @param history
-     */
-        public DrawCanvas(int width, int height, MacroCommand history) {
+    public DrawCanvas(int width, int height, MacroCommand history) {
         setSize(width, height);
         setBackground(Color.white);
         this.history = history;
     }
+    
     // 履歴全体を再描画
     @Override
     public void paint(Graphics g) {
         history.execute();
     }
+    
     // 描画
-
-    /**
-     *
-     * @param x
-     * @param y
-     */
-        @Override
+    @Override
     public void draw(int x, int y) {
         Graphics g = getGraphics();
         g.setColor(color);

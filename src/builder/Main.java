@@ -1,15 +1,7 @@
 package builder;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     * メイン
-     * @param args
-     */
     public static void main(String[] args) {
         
         // 「plain」または「html」を指定
@@ -43,7 +35,7 @@ public class Main {
 
     }
 
-    /**
+    /*
      * 不正なパラメータ設定時、実行の手順を表示
      */
     public static void usage() {

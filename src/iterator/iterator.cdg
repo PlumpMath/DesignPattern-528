@@ -23,7 +23,7 @@
         <Method name="iterator" returnType="Iterator" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="BookShelfIterator" package="" visibility="public" xPosition="316.0" yPosition="196.0">
+    <Class name="BookShelfIterator" package="" visibility="public" xPosition="318.0" yPosition="198.0">
       <Fields>
         <Field name="bookShelf" type="BookShelf" visibility="private"/>
         <Field name="index" type="int" visibility="private"/>
@@ -37,7 +37,7 @@
         <Method name="next" returnType="Object" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Book" package="" visibility="public" xPosition="50.0" yPosition="436.0">
+    <Class name="Book" package="" visibility="public" xPosition="46.0" yPosition="439.0">
       <Fields>
         <Field name="name" type="String" visibility="private"/>
       </Fields>
@@ -50,12 +50,12 @@
         <Method name="getName" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Interface name="Aggregate" package="" visibility="public" xPosition="50.0" yPosition="53.0">
+    <Interface name="Aggregate" package="" visibility="public" xPosition="46.0" yPosition="53.0">
       <Methods>
         <Method name="iterator" returnType="Iterator" visibility="public"/>
       </Methods>
     </Interface>
-    <Interface name="Iterator" package="" visibility="public" xPosition="393.0" yPosition="45.0">
+    <Interface name="Iterator" package="" visibility="public" xPosition="393.0" yPosition="43.0">
       <Methods>
         <Method name="hasNext" returnType="boolean" visibility="public"/>
         <Method name="next" returnType="Object" visibility="public"/>
@@ -63,10 +63,10 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="has" source="BookShelfIterator" target="BookShelf " type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
-    <HasRelation name="has" source="BookShelf " target="Book" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BookShelfIterator" target="Iterator"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BookShelf " target="Aggregate"/>
     <UseRelation name="create" source="Aggregate" target="Iterator" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BookShelf " target="Aggregate"/>
+    <HasRelation name="has" source="BookShelf " target="Book" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="has" source="BookShelfIterator" target="BookShelf " type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="BookShelfIterator" target="Iterator"/>
   </ClassDiagramRelations>
 </ClassDiagram>

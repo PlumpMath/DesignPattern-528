@@ -1,23 +1,12 @@
 package builder;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Director {
     private final Builder builder;
 
-    /**
-     *
-     * @param builder
-     */
     public Director(Builder builder) {      // Builderのサブクラスのインスタンスが与えられるので、
         this.builder = builder;             // builderフィールドに保持しておく。
     }
 
-    /**
-     *
-     */
     public void construct() {             // 文書構築
         builder.makeTitle("Greeting");              // タイトル
         builder.makeString("朝から昼にかけて");     // 文字列

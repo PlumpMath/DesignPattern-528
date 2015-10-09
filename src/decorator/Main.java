@@ -1,15 +1,7 @@
 package decorator;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Display b1 = new StringDisplay("Hello, world.");
         Display b2 = new SideBorder(b1, '#');

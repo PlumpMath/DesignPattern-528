@@ -1,15 +1,7 @@
 package chainOfResponsibility;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Support alice   = new NoSupport("Alice");
         Support bob     = new LimitSupport("Bob", 100);

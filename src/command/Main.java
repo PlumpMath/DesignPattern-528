@@ -8,10 +8,6 @@ import command.command.Command;
 import java.awt.event.*;
 import javax.swing.*;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main extends JFrame implements ActionListener, MouseMotionListener, WindowListener {
     // 描画履歴
     private final MacroCommand history = new MacroCommand();
@@ -21,11 +17,6 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
     private final JButton clearButton  = new JButton("clear");
 
     // コンストラクタ
-
-    /**
-     *
-     * @param title
-     */
     public Main(String title) {
         super(title);
 
@@ -82,10 +73,6 @@ public class Main extends JFrame implements ActionListener, MouseMotionListener,
     @Override
     public void windowOpened(WindowEvent e) {}
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         new Main("Command Pattern Sample");
     }

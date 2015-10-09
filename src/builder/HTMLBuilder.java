@@ -2,18 +2,10 @@ package builder;
 
 import java.io.*;
 
-/**
- *
- * @author kinoshita_h
- */
 public class HTMLBuilder implements Builder {
     private String filename;                                    // 作成するファイル名
     private PrintWriter writer;                                 // ファイルに書き込むPrintWriter
 
-    /**
-     *
-     * @param title
-     */
     @Override
     public void makeTitle(String title) {                       // HTMLファイルでのタイトル
         filename = title + ".html";                                 // タイトルを元にファイル名決定
@@ -26,19 +18,11 @@ public class HTMLBuilder implements Builder {
         writer.println("<h1>" + title + "</h1>");
     }
 
-    /**
-     *
-     * @param str
-     */
     @Override
     public void makeString(String str) {                        // HTMLファイルでの文字列
         writer.println("<p>" + str + "</p>");                       // <p>タグで出力
     }
 
-    /**
-     *
-     * @param items
-     */
     @Override
     public void makeItems(String[] items) {                     // HTMLファイルでの箇条書き
         writer.println("<ul>");                                     // <ul>と<li>で出力
@@ -48,19 +32,12 @@ public class HTMLBuilder implements Builder {
         writer.println("</ul>");
     }
 
-    /**
-     *
-     */
     @Override
     public void close() {                                       // 文書の完成
         writer.println("</body></html>");                           // タグを閉じる
         writer.close();                                             // ファイルをクローズ
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String getResult() {                                 // 完成した文書
         return filename;                                            // ファイル名を返す
