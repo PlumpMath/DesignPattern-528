@@ -8,10 +8,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-/**
- *
- * @author kinoshita_h
- */
 public final class LoginFrame extends Frame implements ActionListener, Mediator {
     private ColleagueCheckbox checkGuest;
     private ColleagueCheckbox checkLogin;
@@ -22,12 +18,7 @@ public final class LoginFrame extends Frame implements ActionListener, Mediator 
 
     // コンストラクタ。
     // Colleagueたちを生成し、配置した後に表示を行う。
-
-    /**
-     *
-     * @param title
-     */
-        public LoginFrame(String title) {
+    public LoginFrame(String title) {
         super(title);
         setBackground(Color.lightGray);
         // レイアウトマネージャを使って4×2のグリッドを作る
@@ -51,11 +42,7 @@ public final class LoginFrame extends Frame implements ActionListener, Mediator 
     }
 
     // Colleagueたちを生成する。
-
-    /**
-     *
-     */
-        @Override
+    @Override
     public void createColleagues() {
         // 生成
         CheckboxGroup g = new CheckboxGroup();
@@ -83,11 +70,7 @@ public final class LoginFrame extends Frame implements ActionListener, Mediator 
     }
 
     // Colleageからの通知で各Colleageの有効/無効を判定する。
-
-    /**
-     *
-     */
-        @Override
+    @Override
     public void colleagueChanged() {
         if (checkGuest.getState()) { // Guest mode
             textUser.setColleagueEnabled(false);
@@ -98,6 +81,7 @@ public final class LoginFrame extends Frame implements ActionListener, Mediator 
             userpassChanged();
         }
     }
+    
     // textUserまたはtextPassの変更があった。
     // 各Colleageの有効/無効を判定する。
     private void userpassChanged() {
@@ -113,6 +97,7 @@ public final class LoginFrame extends Frame implements ActionListener, Mediator 
             buttonOk.setColleagueEnabled(false);
         }
     }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());

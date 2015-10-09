@@ -3,16 +3,8 @@ package memento;
 import memento.game.Memento;
 import memento.game.Gamer;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Gamer gamer = new Gamer(100);               // Å‰‚ÌŠ‹à‚Í100
         Memento memento = gamer.createMemento();    // Å‰‚Ìó‘Ô‚ğ•Û‘¶‚µ‚Ä‚¨‚­
