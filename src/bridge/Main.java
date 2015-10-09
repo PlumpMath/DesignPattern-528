@@ -1,15 +1,7 @@
 package bridge;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Display d1 = new Display(new StringDisplayImpl("Hello, Japan."));
         Display d2 = new CountDisplay(new StringDisplayImpl("Hello, World."));
