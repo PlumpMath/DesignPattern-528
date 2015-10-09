@@ -1,15 +1,7 @@
 package adapter.sample02;
 
-/**
- *
- * @author kinopp
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Print p = new PrintBanner("Hello");
         p.printWeak();
