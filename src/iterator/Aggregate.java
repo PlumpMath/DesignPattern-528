@@ -6,9 +6,5 @@ package iterator;
  */
 public interface Aggregate {
 
-    /**
-     *
-     * @return
-     */
     public abstract Iterator iterator();
 }

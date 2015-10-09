@@ -6,15 +6,7 @@ package iterator;
  */
 public interface Iterator {
 
-    /**
-     *
-     * @return
-     */
     public abstract boolean hasNext();
 
-    /**
-     *
-     * @return
-     */
     public abstract Object next();
 }

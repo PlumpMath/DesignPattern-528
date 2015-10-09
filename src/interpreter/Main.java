@@ -3,16 +3,8 @@ package interpreter;
 import java.util.*;
 import java.io.*;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("./src/interpreter/program.txt"));

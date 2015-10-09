@@ -2,18 +2,9 @@ package interpreter;
 
 // <command> ::= <repeat command> | <primitive command>
 
-/**
- *
- * @author kinoshita_h
- */
 public class CommandNode extends Node {
     private Node node;
 
-    /**
-     *
-     * @param context
-     * @throws ParseException
-     */
     @Override
     public void parse(Context context) throws ParseException {
         if (context.currentToken().equals("repeat")) {
@@ -24,6 +15,7 @@ public class CommandNode extends Node {
             node.parse(context);
         }
     }
+    
     @Override
     public String toString() {
         return node.toString();

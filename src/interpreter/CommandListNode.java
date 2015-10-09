@@ -4,18 +4,9 @@ import java.util.ArrayList;
 
 // <command list> ::= <command>* end
 
-/**
- *
- * @author kinoshita_h
- */
 public class CommandListNode extends Node {
     private final ArrayList list = new ArrayList();
 
-    /**
-     *
-     * @param context
-     * @throws ParseException
-     */
     @Override
     public void parse(Context context) throws ParseException {
         while (true) {
@@ -31,6 +22,7 @@ public class CommandListNode extends Node {
             }
         }
     }
+    
     @Override
     public String toString() {
         return list.toString();
