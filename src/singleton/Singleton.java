@@ -1,9 +1,5 @@
 package singleton;
 
-/**
- * シングルトンクラスのサンプル
- * @author kinoshita_h
- */
 public class Singleton {
     // private static finalで自身のクラスを生成。
     //  ※外部からの参照不可、静的な値、継承による変更不可
@@ -13,10 +9,6 @@ public class Singleton {
         System.out.println("インスタンスを生成しました。");
     }
 
-    /**
-     * インスタンス取得メソッド
-     * @return 当クラスのインスタンス
-     */
     public static Singleton getInstance() {
         // このメソッドを通してのみインスタンスを取得できる。
         // staticなインスタンスなのでどこから呼ばれても常に同じオブジェクトを渡す。

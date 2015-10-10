@@ -1,15 +1,7 @@
 package proxy;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     * ƒƒCƒ“
-     * @param args
-     */
     public static void main(String[] args) {
         Printable p = new PrinterProxy("Alice");
         System.out.println("–¼‘O‚ÍŒ»İ" + p.getPrinterName() + "‚Å‚·B");

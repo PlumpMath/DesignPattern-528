@@ -1,15 +1,7 @@
 package templateMethod;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         AbstractDisplay d1 = new CharDisplay('H');                  // 'H'を持ったCharDisplayのインスタンスを1個作る。
         AbstractDisplay d2 = new StringDisplay("Hello, world.");    // "Hello, world."を持ったStringDisplayのインスタンスを1個作る。

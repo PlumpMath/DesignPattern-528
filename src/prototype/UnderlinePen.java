@@ -2,25 +2,13 @@ package prototype;
 
 import prototype.framework.Product;
 
-/**
- *
- * @author kinoshita_h
- */
 public class UnderlinePen implements Product {
     private char ulchar;
 
-    /**
-     *
-     * @param ulchar
-     */
     public UnderlinePen(char ulchar) {
         this.ulchar = ulchar;
     }
 
-    /**
-     *
-     * @param s
-     */
     public void use(String s) {
         int length = s.getBytes().length;
         System.out.println("\""  + s + "\"");
@@ -31,10 +19,6 @@ public class UnderlinePen implements Product {
         System.out.println("");
     }
 
-    /**
-     *
-     * @return
-     */
     public Product createClone() {
         Product p = null;
         try {

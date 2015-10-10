@@ -4,16 +4,8 @@ package prototype;
 import prototype.framework.Manager;
 import prototype.framework.Product;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         // èÄîı
         Manager manager = new Manager();

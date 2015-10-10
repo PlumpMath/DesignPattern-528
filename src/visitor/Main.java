@@ -1,15 +1,7 @@
 package visitor;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         try {
             System.out.println("Making root entries...");

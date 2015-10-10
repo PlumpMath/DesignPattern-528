@@ -1,24 +1,8 @@
 package strategy;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
-//        if (args.length != 2) {
-//            System.out.println("Usage: java Main randomseed1 randomseed2");
-//            System.out.println("Example: java Main 314 15");
-//            System.out.println("args.length:" + args.length);
-//            System.exit(0);
-//        }
-        //int seed1 = Integer.parseInt(args[0]);
-        //int seed2 = Integer.parseInt(args[1]);
         int seed1 = Integer.parseInt("314");
         int seed2 = Integer.parseInt("15");
         Player player1 = new Player("Taro", new WinningStrategy(seed1));

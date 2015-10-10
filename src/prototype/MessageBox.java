@@ -2,25 +2,13 @@ package prototype;
 
 import prototype.framework.Product;
 
-/**
- *
- * @author kinoshita_h
- */
 public class MessageBox implements Product {
     private char decochar;
 
-    /**
-     *
-     * @param decochar
-     */
     public MessageBox(char decochar) {
         this.decochar = decochar;
     }
 
-    /**
-     *
-     * @param s
-     */
     public void use(String s) {
         int length = s.getBytes().length;
         for (int i = 0; i < length + 4; i++) {
@@ -34,10 +22,6 @@ public class MessageBox implements Product {
         System.out.println("");
     }
 
-    /**
-     *
-     * @return
-     */
     public Product createClone() {
         Product p = null;
         try {

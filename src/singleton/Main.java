@@ -1,15 +1,7 @@
 package singleton;
 
-/**
- *
- * @author kinoshita_h
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         System.out.println("Start.");
         //Singleton obj0 = new Singleton();        // ← newによるオブジェクト生成不可

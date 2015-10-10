@@ -11,10 +11,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-/**
- *
- * @author kinopp
- */
 public class SafeFrame extends Frame implements ActionListener, Context {
     private TextField textClock = new TextField(60);        // 現在時刻表示
     private TextArea textScreen = new TextArea(10, 60);     // 警備センター出力
@@ -25,12 +21,6 @@ public class SafeFrame extends Frame implements ActionListener, Context {
 
     private State state = DayState.getInstance();           // 現在の状態
 
-    // コンストラクタ
-
-    /**
-     *
-     * @param title
-     */
     public SafeFrame(String title) {
         super(title);
         setBackground(Color.lightGray);
@@ -58,6 +48,7 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         buttonPhone.addActionListener(this);
         buttonExit.addActionListener(this);
     }
+    
     // ボタンが押されたらここに来る
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.toString());
@@ -73,12 +64,8 @@ public class SafeFrame extends Frame implements ActionListener, Context {
             System.out.println("?");
         }
     }
+    
     // 時刻の設定
-
-    /**
-     *
-     * @param hour
-     */
     public void setClock(int hour) {
         String clockstring = "現在時刻は";
         if (hour < 10) {
@@ -91,30 +78,17 @@ public class SafeFrame extends Frame implements ActionListener, Context {
         state.doClock(this, hour);
     }
     // 状態変化
-
-    /**
-     *
-     * @param state
-     */
     public void changeState(State state) {
         System.out.println(this.state + "から" + state + "へ状態が変化しました。");
         this.state = state;
     }
+    
     // 警備センター警備員呼び出し
-
-    /**
-     *
-     * @param msg
-     */
     public void callSecurityCenter(String msg) {
         textScreen.append("call! " + msg + "\n");
     }
+    
     // 警備センター記録
-
-    /**
-     *
-     * @param msg
-     */
     public void recordLog(String msg) {
         textScreen.append("record ... " + msg + "\n");
     }

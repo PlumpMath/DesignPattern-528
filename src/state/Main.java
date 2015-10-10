@@ -1,15 +1,7 @@
 package state;
 
-/**
- *
- * @author kinopp
- */
 public class Main {
 
-    /**
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         SafeFrame frame = new SafeFrame("State Sample");
         while (true) {
